@@ -1,0 +1,29 @@
+- id: by
+  translation: "Por"
+
+- id: tags
+  translation: "Tags"
+
+- id: categories
+  translation: "Categorias"
+
+- id: readMore
+  translation: "Ler Mais →"
+
+- id: translations
+  translation: "Traduções"
+
+- id: related
+  translation: "Ver também"
+
+- id: recentPosts
+  translation: "Posts recentes"
+
+- id: backToTop
+  translation: "Voltar acima"
+
+- id: language
+  translation: "Idioma"
+
+- id: thanks
+  translation: "Dados Zero, ©Copyright 2019"

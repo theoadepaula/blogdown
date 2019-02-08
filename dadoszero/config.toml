@@ -1,106 +1,128 @@
-baseurl = "http://dadoszero.com.br"
-title = "Dados Zero"
-theme = "hugo-theme-cleanwhite"
+baseurl = "https://example.com/"
+title = "Bootstrap demo"
 languageCode = "pt-br"
-# Enable comments by entering your Disqus shortname
-disqusShortname = "dadoszero"
-googleAnalytics = ""
-preserveTaxonomyNames = true
-paginate = 5 #frontpage pagination
-hasCJKLanguage = true
+defaultContentLanguage = "pt"
 
-[outputs]
-home = ["HTML", "RSS", "Algolia"]
+# Pagination
+paginate = 3
+paginatePath = "page"
+
+# Theme to use
+theme = "hugo-bootstrap"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+# Google analytics
+# googleAnalytics = ""
+
+[languages.en]
+  languageName = "English"
+
+  # Replace the default footer message with a localized message
+  # copyright = "Hugo template made with ❤ by Xzya"
+
+  [[languages.en.menu.main]]
+    url = "/"
+    name = "Home"
+    weight = 1
+  [[languages.en.menu.main]]
+    url = "/about/"
+    name = "About"
+    weight = 2
+  [[languages.en.menu.main]]
+    url = "/contact/"
+    name = "Contact"
+    weight = 3
+    
+[languages.pt]
+  languageName = "Português"
+
+  # Replace the default footer message with a localized message
+  # copyright = "Hugo template made with ❤ by Xzya"
+
+  [[languages.pt.menu.main]]
+    url = "/"
+    name = "Home"
+    weight = 1
+  [[languages.pt.menu.main]]
+    url = "/about/"
+    name = "Sobre"
+    weight = 2
+  [[languages.pt.menu.main]]
+    url = "/contact/"
+    name = "Contato"
+    weight = 3
+  [[languages.pt.menu.main]]
+    url = "/teste/"
+    name = "Teste"
+    weight = 3
+
+[languages.es]
+  languageName = "Español"
+
+  [[languages.es.menu.main]]
+    url = "/es/"
+    name = "Casa"
+    weight = 1
+  [[languages.es.menu.main]]
+    url = "/about/"
+    name = "Acerca de"
+    weight = 2
+  [[languages.es.menu.main]]
+    url = "/contact/"
+    name = "Contacto"
+    weight = 3
+
+[languages.de]
+  languageName = "Deutsch"
+
+  [[languages.de.menu.main]]
+    url = "/de/"
+    name = "Start"
+    weight = 1
+  [[languages.de.menu.main]]
+    url = "/about/"
+    name = "Über uns"
+    weight = 2
+  [[languages.de.menu.main]]
+    url = "/contact/"
+    name = "Kontakt"
+    weight = 3
+
+# Links format
+
+[permalinks]
+  post = "/:year/:month/:day/:slug/"
 
 [params]
-  header_image = "img/home_bg_teste.jpg"
-  SEOTitle = ""
-  description = "Um site que fala sobre assuntos aleatórios usando ciência de dados"
-  keyword = "Ciência de dados, R, estatística"
-  slogan = "Site sobre ciência de dados"
+  # Main sections (currently used for the recent posts in the sidebar)
+  mainSections = ["post"]
 
-  image_404 = "img/404-bg.jpg"
-  title_404 = "A página não foi encontrada :("
+  # Default author
+  author = "Théo Albuquerque"
 
-  # leancloud storage for page view counter
-  page_view_conter = false 
-  leancloud_app_id = ""
-  leancloud_app_key = ""
+  # Date format (default: Jan 2, 2006)
+  # date_format = "Jan 2, 2006"
 
-  # algolia site search
-  algolia_search = true
-  algolia_appId = ""
-  algolia_indexName = ""
-  algolia_apiKey = ""
+  # Display post summaries instead of content in list templates (default: true)
+  # truncate = false
 
-  # Sidebar settings
-  sidebar_about_description = "Interessado por Ciência de dados"
-  #sidebar_avatar = "img/avatar-zhaohuabing.jpg"      # use absolute URL, seeing it's used in both `/` and `/about/`
-  sidebar_avatar = "img/theo.jpg"      # use absolute URL, seeing it's used in both `/` and `/about/`
+  [params.sidebar]
+    # Whether to show the recent posts or not (default: true)
+    # showRecent = false
 
-  featured_tags = true 
-  featured_condition_size = 1 
+    # Whether to show the taxonomies or not (default: true)
+    # showTaxonomy = false
 
-  # Baidu Analytics
-  ba_track_id = ""
-  
-  # We need a proxy to access Disqus api in China
-  # Follow https://github.com/zhaohuabing/disqus-php-api to set up your own disqus proxy
-  disqus_proxy = ""
-  disqus_site = ""
+    # How many posts to show on the sidebar (Default: 5)
+    # num_recent_posts = 5
 
-  #Enable wechat pay & alipay to allow readers send reward money if they like the articles 
-  reward = false 
-  # reward_guide = "如果这篇文章对你有用,请随意打赏" 
+  [params.header]
+    # Color scheme for the header (default: "light")
+    # colorScheme = "dark"
 
-  friends = true
-  bookmarks = true
-  about_me = true
-
-  [params.social]
-  rss            = true 
-  email          = "theophd@gmail.com"
-  #facebook      = "full profile url in facebook"
-  #googleplus    = "full profile url in googleplus"
-  twitter       = "https://twitter.com/gds4ever"
-  linkedin       = "https://www.linkedin.com/in/théo-albuquerque-de-paula-23735a156/"
-  #stackoverflow  = "https://stackoverflow.com/users/yourstackoverflowid"
-  #instagram     = "full profile url in instagram"
-  github         = "https://github.com/theoadepaula"
-  #wechat         = "your wechat qr code image"
-#  medium         = "full profile url in medium"
-  #pinterest     = "full profile url in pinterest"
-  
-  [[params.friends_link]]
-  title = "Linda的博客"
-  href =  "https://zhaozhihan.com"
-
-  [[params.bookmark_link]]
-  title =  "Martin Fowler"
-  href =  "https://martinfowler.com"
-  [[params.bookmark_link]]
-  title = "ServiceMesher"
-  href =  "http://www.servicemesher.com"
-  [[params.bookmark_link]]
-  title =  "Pxhere"
-  href = "https://pxhere.com"
-  [[params.bookmark_link]]
-  title = "unsplash"
-  href = "https://unsplash.com"
-  
-  [[params.addtional_menus]]
-  title =  "BOOKS"
-  href =  "/top/books/"
-  [[params.addtional_menus]]
-  title =  "ABOUT"
-  href =  "/top/about/"
-
-[outputFormats.Algolia]
-baseName = "algolia"
-isPlainText = true
-mediaType = "application/json"
-notAlternative = true
-
-[params.algolia]
-vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
-params = ["categories", "tags"] 
+  [params.footer]
+    # Color scheme for the footer (default: "light")
+    # colorScheme = "dark"
