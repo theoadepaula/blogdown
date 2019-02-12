@@ -87,6 +87,11 @@
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
+                hreflang="de"
+                href="/de/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/"
                 />
@@ -94,11 +99,6 @@
                 rel="alternate"
                 hreflang="pt"
                 href="/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="/de/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -112,6 +112,11 @@
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
+                hreflang="de"
+                href="/de/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/categories/"
                 />
@@ -119,11 +124,6 @@
                 rel="alternate"
                 hreflang="pt"
                 href="/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="/de/categories/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -157,6 +157,11 @@
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
+                hreflang="de"
+                href="/de/tags/demo/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/tags/demo/"
                 />
@@ -164,11 +169,6 @@
                 rel="alternate"
                 hreflang="pt"
                 href="/tags/demo/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="/de/tags/demo/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -183,13 +183,13 @@
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
-                hreflang="pt"
-                href="/tags/development/"
+                hreflang="de"
+                href="/de/tags/development/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="de"
-                href="/de/tags/development/"
+                hreflang="pt"
+                href="/tags/development/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -204,13 +204,13 @@
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
-                hreflang="pt"
-                href="/categories/development/"
+                hreflang="de"
+                href="/de/categories/development/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="de"
-                href="/de/categories/development/"
+                hreflang="pt"
+                href="/categories/development/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -225,13 +225,13 @@
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
-                hreflang="pt"
-                href="/tags/go/"
+                hreflang="de"
+                href="/de/tags/go/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="de"
-                href="/de/tags/go/"
+                hreflang="pt"
+                href="/tags/go/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -246,13 +246,13 @@
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
-                hreflang="pt"
-                href="/tags/golang/"
+                hreflang="de"
+                href="/de/tags/golang/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="de"
-                href="/de/tags/golang/"
+                hreflang="pt"
+                href="/tags/golang/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -267,13 +267,13 @@
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
-                hreflang="pt"
-                href="/categories/golang/"
+                hreflang="de"
+                href="/de/categories/golang/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="de"
-                href="/de/categories/golang/"
+                hreflang="pt"
+                href="/categories/golang/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -288,13 +288,13 @@
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
-                hreflang="pt"
-                href="/tags/hugo/"
+                hreflang="de"
+                href="/de/tags/hugo/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="de"
-                href="/de/tags/hugo/"
+                hreflang="pt"
+                href="/tags/hugo/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -309,13 +309,13 @@
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="/en/post/"
+                hreflang="de"
+                href="/de/post/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="de"
-                href="/de/post/"
+                hreflang="en"
+                href="/en/post/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -335,6 +335,11 @@
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
+                hreflang="de"
+                href="/de/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/tags/"
                 />
@@ -342,11 +347,6 @@
                 rel="alternate"
                 hreflang="pt"
                 href="/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="/de/tags/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -361,13 +361,13 @@
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
-                hreflang="pt"
-                href="/tags/templates/"
+                hreflang="de"
+                href="/de/tags/templates/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="de"
-                href="/de/tags/templates/"
+                hreflang="pt"
+                href="/tags/templates/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -382,13 +382,13 @@
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
-                hreflang="pt"
-                href="/tags/themes/"
+                hreflang="de"
+                href="/de/tags/themes/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="de"
-                href="/de/tags/themes/"
+                hreflang="pt"
+                href="/tags/themes/"
                 />
     <xhtml:link
                 rel="alternate"
