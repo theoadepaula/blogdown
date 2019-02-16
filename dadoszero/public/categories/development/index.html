@@ -22,7 +22,7 @@
 
     <title>
       
-        Development | Bootstrap demo
+        Development | Dados Zero
       
     </title>
 
@@ -31,7 +31,7 @@
     <link href="/css/style.css" rel="stylesheet">
 
     
-    <link href="/categories/development/index.xml" rel="alternate" type="application/rss+xml" title="Bootstrap demo" />
+    <link href="/categories/development/index.xml" rel="alternate" type="application/rss+xml" title="Dados Zero" />
     
 
     
@@ -47,7 +47,7 @@
         <a class="navbar-brand" href="/">
             <img src="https://getbootstrap.com/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top"
     alt="">
-Bootstrap demo
+Dados Zero
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -90,13 +90,9 @@ Bootstrap demo
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         
-                            <a class="dropdown-item" href="/de/">Deutsch</a>
-                        
                             <a class="dropdown-item" href="/en/">English</a>
                         
                             <a class="dropdown-item" href="/">Português</a>
-                        
-                            <a class="dropdown-item" href="/es/">Español</a>
                         
                     </div>
                 </li>
@@ -134,7 +130,7 @@ Bootstrap demo
 
 <div class="blog-post-date text-secondary">
     
-        <time datetime="2014-04-02">Apr 2, 2014</time>
+        <time datetime="2014-04-02">02/04/2014</time>
     
     
         Por <span rel="author">Théo Albuquerque</span>
@@ -186,7 +182,7 @@ This document is a brief primer on using go templates.
         <article class="blog-post">
     <header>
         <h2 class="blog-post-title">
-    <a class="text-dark" href="/2014/04/02/getting-started-with-hugo/">Getting Started with Hugo</a>
+    <a class="text-dark" href="/2014/04/02/hugo-template-primer/">(Hu)go Template Primer</a>
 </h2>
 
         
@@ -194,10 +190,10 @@ This document is a brief primer on using go templates.
 
 <div class="blog-post-date text-secondary">
     
-        <time datetime="2014-04-02">Apr 2, 2014</time>
+        <time datetime="2014-04-02">02/04/2014</time>
     
     
-        Por <span rel="author">John Doe</span>
+        Por <span rel="author">Théo Albuquerque</span>
     
 </div>
 
@@ -209,9 +205,13 @@ This document is a brief primer on using go templates.
     
         <a class="badge badge-primary" href="/tags/golang">golang</a>
     
-        <a class="badge badge-primary" href="/tags/hugo">hugo</a>
+        <a class="badge badge-primary" href="/tags/templates">templates</a>
+    
+        <a class="badge badge-primary" href="/tags/themes">themes</a>
     
         <a class="badge badge-primary" href="/tags/development">development</a>
+    
+        <a class="badge badge-primary" href="/tags/demo">demo</a>
     
 </div>
 
@@ -226,15 +226,71 @@ This document is a brief primer on using go templates.
 </div>
 
     </header>
-    Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
-Save it somewhere specific as we will be using it in the next step.
-More complete instructions are available at installing hugo
-Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
-Follow the following steps:
- Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:
+    Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
+This document is a brief primer on using go templates.
     
     <p></p>
-    <a href="/2014/04/02/getting-started-with-hugo/">Ler Mais →</a>
+    <a href="/2014/04/02/hugo-template-primer/">Ler Mais →</a>
+    
+</article>
+
+    
+
+
+
+    
+        <article class="blog-post">
+    <header>
+        <h2 class="blog-post-title">
+    <a class="text-dark" href="/2014/04/02/hugo-template-primer/">(Hu)go Template Primer</a>
+</h2>
+
+        
+
+
+<div class="blog-post-date text-secondary">
+    
+        <time datetime="2014-04-02">02/04/2014</time>
+    
+    
+        Por <span rel="author">Théo Albuquerque</span>
+    
+</div>
+
+        
+<div class="blog-post-tags text-secondary">
+    <strong>Tags:</strong>
+    
+        <a class="badge badge-primary" href="/tags/go">go</a>
+    
+        <a class="badge badge-primary" href="/tags/golang">golang</a>
+    
+        <a class="badge badge-primary" href="/tags/templates">templates</a>
+    
+        <a class="badge badge-primary" href="/tags/themes">themes</a>
+    
+        <a class="badge badge-primary" href="/tags/development">development</a>
+    
+        <a class="badge badge-primary" href="/tags/demo">demo</a>
+    
+</div>
+
+        
+<div class="blog-post-categories text-secondary">
+    <strong>Categorias:</strong>
+    
+        <a class="badge badge-primary" href="/categories/development">Development</a>
+    
+        <a class="badge badge-primary" href="/categories/golang">golang</a>
+    
+</div>
+
+    </header>
+    Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
+This document is a brief primer on using go templates.
+    
+    <p></p>
+    <a href="/2014/04/02/hugo-template-primer/">Ler Mais →</a>
     
 </article>
 
@@ -243,6 +299,55 @@ Follow the following steps:
 
 
 
+
+<nav class="blog-pagination">
+    <ul class="pagination justify-content-center">
+        
+        <li class="page-item">
+            <a class="page-link" href="/categories/development/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+        </li>
+        
+        <li class="page-item disabled">
+            <a class="page-link" href="" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+        </li>
+        
+        
+            
+            
+            
+            
+                
+                
+            
+            
+                <li class="page-item active">
+                    <a class="page-link" href="/categories/development/">1</a>
+                </li>
+            
+        
+            
+            
+            
+            
+                
+                
+            
+            
+                <li class="page-item ">
+                    <a class="page-link" href="/categories/development/page/2/">2</a>
+                </li>
+            
+        
+        <li class="page-item ">
+            <a class="page-link" href="/categories/development/page/2/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+        </li>
+        
+            <li class="page-item">
+                <a class="page-link" href="/categories/development/page/2/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+            </li>
+        
+    </ul>
+</nav>
 
 
 
@@ -275,7 +380,7 @@ Follow the following steps:
         </li>
         
         <li>
-            <a href="/2015/01/05/meu-primeiro-post/">Meu primeiro post!</a>
+            <a href="/2015/01/05/erster-artikel/">Erster Artikel!</a>
         </li>
         
     </ol>

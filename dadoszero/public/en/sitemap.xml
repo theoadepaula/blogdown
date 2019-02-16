@@ -12,39 +12,22 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="es"
-                href="/es/2015/01/05/primer-comentario/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en"
                 href="/en/2015/01/04/first-post/"
                 />
   </url>
   
   <url>
-    <loc>/en/</loc>
-    <lastmod>2015-01-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="/de/"
-                />
+    <loc>/en/about/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/"
+                href="/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/"
+                href="/en/about/"
                 />
   </url>
   
@@ -53,18 +36,8 @@
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
-                hreflang="de"
-                href="/de/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="pt"
                 href="/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/categories/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -74,23 +47,29 @@
   </url>
   
   <url>
+    <loc>/en/</loc>
+    <lastmod>2015-01-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/"
+                />
+  </url>
+  
+  <url>
     <loc>/en/tags/demo/</loc>
     <lastmod>2015-01-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
-                hreflang="de"
-                href="/de/tags/demo/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="pt"
                 href="/tags/demo/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/tags/demo/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -100,19 +79,23 @@
   </url>
   
   <url>
+    <loc>/en/contact/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/contact/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/contact/"
+                />
+  </url>
+  
+  <url>
     <loc>/en/post/</loc>
     <lastmod>2015-01-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="/de/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/post/"
-                />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -131,18 +114,8 @@
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
-                hreflang="de"
-                href="/de/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="pt"
                 href="/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/tags/"
                 />
     <xhtml:link
                 rel="alternate"
