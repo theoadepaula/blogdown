@@ -1,0 +1,24 @@
+# .travis.yml
+dist: xenial
+sudo: required
+
+before_install:
+  - sudo apt-get install -y lftp
+addons:
+  apt:
+    update: true
+
+install:
+ - wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.52/hugo_extended_0.52_Linux-64bit.deb  
+ - sudo dpkg -i /tmp/hugo.deb
+
+script:
+ - hugo
+ - cd $TRAVIS_BUILD_DIR
+ - chmod +x deploy.sh
+deploy:
+  - provider: script
+    script: ./deploy.sh
+    skip_cleanup: true
+    on:
+      branch: master
