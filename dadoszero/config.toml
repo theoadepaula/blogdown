@@ -4,7 +4,7 @@ languageCode = "pt-br"
 defaultContentLanguage = "pt"
 
 # Pagination
-paginate = 3
+paginate = 5
 paginatePath = "page"
 
 # Theme to use
@@ -53,10 +53,6 @@ theme = "hugo-bootstrap"
   [[languages.pt.menu.main]]
     url = "/contact/"
     name = "Contato"
-    weight = 3
-  [[languages.pt.menu.main]]
-    url = "/teste/"
-    name = "Teste"
     weight = 3
 
 #[languages.es]
