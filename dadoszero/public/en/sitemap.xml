@@ -47,6 +47,20 @@
   </url>
   
   <url>
+    <loc>/en/contact/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/contact/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/contact/"
+                />
+  </url>
+  
+  <url>
     <loc>/en/</loc>
     <lastmod>2015-01-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -75,20 +89,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="/en/tags/demo/"
-                />
-  </url>
-  
-  <url>
-    <loc>/en/contact/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/contact/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/contact/"
                 />
   </url>
   

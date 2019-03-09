@@ -1,5 +1,5 @@
 ---
-title: Contact
+title: Contato
 ---
 
-Contact us!
+Entre em contato pelo [Twitter](https://twitter.com/DadosZero) ou pelo e-mail: <dadoszero@dadoszero.com.br>
