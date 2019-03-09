@@ -2,6 +2,7 @@
 title: Hello World!
 author: 'Théo Albuquerque'
 date: '2019-03-11'
+publishDate: '2019-03-11'
 slug: hello-world-meu-primeiro-post
 categories: []
 tags: ["R","Data Science"]

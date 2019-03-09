@@ -21,17 +21,6 @@
     </item>
     
     <item>
-      <title>Meu primeiro post!</title>
-      <link>/2015/01/05/meu-primeiro-post/</link>
-      <pubDate>Mon, 05 Jan 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/2015/01/05/meu-primeiro-post/</guid>
-      <description>&lt;p&gt;Esse é o meu primeiro post, que excitante!&lt;/p&gt;
-
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Contato</title>
       <link>/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
