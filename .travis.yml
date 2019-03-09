@@ -1,24 +1,26 @@
 # .travis.yml
+language: r
 dist: xenial
-sudo: required
+latex: false
 
-before_install:
-  - sudo apt-get install -y lftp
-addons:
-  apt:
-    update: true
+branches:
+  only:
+    - master
 
-install:
- - wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.52/hugo_extended_0.52_Linux-64bit.deb  
- - sudo dpkg -i /tmp/hugo.deb
+cache:
+  packages: yes
+  directories:
+    - $HOME/bin
 
 script:
- - hugo
- - cd $TRAVIS_BUILD_DIR
- - chmod +x deploy.sh
+  - Rscript -e 'blogdown::install_hugo()'
+  - Rscript -e 'blogdown::build_site()'
+
 deploy:
-  - provider: script
-    script: ./deploy.sh
-    skip_cleanup: true
-    on:
-      branch: master
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
+  local_dir: public
+  fqdn: travis-blogdown.yihui.name
