@@ -3,79 +3,129 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://dadoszero.com.br/categories/</loc>
+    <loc>/2019/03/11/hello-world-meu-primeiro-post/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/2019/03/11/hello-world-meu-primeiro-post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/2019/03/11/hello-world-meu-primeiro-post/"
+                />
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://dadoszero.com.br/en/categories/"
+                href="/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="http://dadoszero.com.br/categories/"
+                href="/categories/"
                 />
   </url>
   
   <url>
-    <loc>http://dadoszero.com.br/contact/</loc>
+    <loc>/tags/ci%C3%AAncia-de-dados/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/contact/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://dadoszero.com.br/en/contact/"
+                href="/en/contact/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="http://dadoszero.com.br/contact/"
+                href="/contact/"
                 />
   </url>
   
   <url>
-    <loc>http://dadoszero.com.br/</loc>
+    <loc>/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://dadoszero.com.br/en/"
+                href="/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="http://dadoszero.com.br/"
+                href="/"
                 />
   </url>
   
   <url>
-    <loc>http://dadoszero.com.br/post/</loc>
-  </url>
-  
-  <url>
-    <loc>http://dadoszero.com.br/about/</loc>
+    <loc>/post/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://dadoszero.com.br/en/about/"
+                href="/en/post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="http://dadoszero.com.br/about/"
+                href="/post/"
                 />
   </url>
   
   <url>
-    <loc>http://dadoszero.com.br/tags/</loc>
+    <loc>/tags/r/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://dadoszero.com.br/en/tags/"
+                href="/en/tags/r/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="http://dadoszero.com.br/tags/"
+                href="/tags/r/"
+                />
+  </url>
+  
+  <url>
+    <loc>/about/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/about/"
+                />
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/tags/"
                 />
   </url>
   

@@ -2,12 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Dados Zero</title>
-    <link>http://dadoszero.com.br/en/categories/</link>
+    <link>/en/categories/</link>
     <description>Recent content in Categories on Dados Zero</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
+    <copyright>Dados Zero, ©Copyright 2019</copyright>
     
-	<atom:link href="http://dadoszero.com.br/en/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/en/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

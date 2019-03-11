@@ -22,6 +22,7 @@ theme = "hugo-bootstrap"
 
   # Replace the default footer message with a localized message
   # copyright = "Hugo template made with ❤ by Xzya"
+  copyright = "Dados Zero, ©Copyright 2019"
 
   [[languages.en.menu.main]]
     url = "/"
@@ -35,6 +36,9 @@ theme = "hugo-bootstrap"
     url = "/contact/"
     name = "Contact"
     weight = 3
+    
+  [[languages.en.params]]
+    mainSections = ["post"]
     
 [languages.pt]
   languageName = "Português"
@@ -115,6 +119,8 @@ theme = "hugo-bootstrap"
 
     # How many posts to show on the sidebar (Default: 5)
     # num_recent_posts = 5
+    
+    twitter="https://twitter.com/dadoszero"
 
   [params.header]
     # Color scheme for the header (default: "light")
