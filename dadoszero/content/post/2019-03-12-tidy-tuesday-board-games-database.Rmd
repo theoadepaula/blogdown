@@ -1,0 +1,137 @@
+---
+title: "Tidy Tuesday - Board Games Database"
+author: "Théo Albuquerque de Paula"
+date: '2019-03-12'
+description: 'Olá! Vamos utilizar o banco de dados fornecido pelo projeto #TidyTuesday
+  para ser utilizado essa semana.'
+slug: tidy-tuesday-board-games-database
+tags:
+- tidytuesday
+- R
+- fivethirtyeight
+- Ciência de Dados
+categories: []
+---
+
+```{r packages, echo=FALSE, warning=FALSE, message=FALSE}
+pacman::p_load("tidyverse","flextable","ggthemes","gridExtra")
+board_games <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-03-12/board_games.csv")
+
+```
+
+
+Olá! Vamos utilizar o banco de dados fornecido pelo projeto [#TidyTuesday](https://github.com/rfordatascience/tidytuesday) para ser utilizado essa semana.O banco de dados vem da [Board Game Geeks](https://boardgamegeek.com/), tendo um artigo bem interessante publicado na [FiveThirtyEight](https://fivethirtyeight.com/features/designing-the-best-board-game-on-the-planet/)
+
+Para entender melhor o banco de dados, segue abaixo um dicionário de dados:
+
+## Dicionário de dados
+<br>
+```{r dict, echo=FALSE}
+dict= tibble::tribble(
+               ~`Variáveis`,      ~Classe,                                                ~`Descrição`,
+               "game_id", "character",                                    "Unique game identifier",
+           "description", "character",                   "A paragraph of text describing the game",
+                 "image", "character",                                     "URL image of the game",
+           "max_players",   "integer",                               "Maximum recommended players",
+          "max_playtime",   "integer",                        "Maximum recommended playtime (min)",
+               "min_age",   "integer",                                   "Minimum recommended age",
+           "min_players",   "integer",                               "Minimum recommended players",
+          "min_playtime",   "integer",                        "Minimum recommended playtime (min)",
+                  "name", "character",                                          "Name of the game",
+          "playing_time",   "integer",                                          "Average playtime",
+             "thumbnail", "character",                                 "URL thumbnail of the game",
+        "year_published",   "integer",                                   "Year game was published",
+                "artist", "character",                                       "Artist for game art",
+              "category", "character",             "Categories for the game (separated by commas)",
+           "compilation", "character",      "If part of a multi-compilation - name of compilation",
+              "designer", "character",                                             "Game designer",
+             "expansion", "character",         "If there is an expansion pack - name of expansion",
+                "family", "character",                "Family of game - equivalent to a publisher",
+              "mechanic", "character",    "Game mechanic - how game is played, separated by comma",
+             "publisher", "character", "Comoany/person who published the game, separated by comma",
+        "average_rating",    "double",                 "Average rating on Board Games Geek (1-10)",
+           "users_rated",    "double",                       "Number of users that rated the game"
+        )
+
+dict[,3]=c("Identificador único de jogo", "Texto descritivo do jogo", "URL de Imagem do jogo", "Máximo de jogadores recomendados", "Tempo máximo de jogo recomendado (min)", "Idade mínima recomendada", "Mínimo de Jogadores recomendados", "Tempo mínimo de jogo recomendado (min)", "Nome do jogo", "Tempo médio de jogo",
+"URL da Miniatura do jogo", "Jogo do ano foi publicado", "Artista para a arte do jogo", "Categorias para o jogo (separadas por vírgulas)", "Parte do nome do jogo (Se houver)", "Designer de jogos", "Nome da expansão do jogo (Se houver)", "Família de jogo - Editor", "Mecânica de jogo - como o jogo é jogado, separado por vírgula", "Empresa / pessoa que publicou o jogo, separada por vírgula","Pontuação média no Board Games Geek (1-10)","Número de usuários que avaliaram o jogo")
+
+dict %>% flextable() %>% autofit()  %>% theme_booktabs()%>% align(j=3,align = "center", part="all")
+
+```
+
+## Análise dos dados
+
+### Jogos mais bem avaliados
+
+```{r game, echo=FALSE}
+board_games %>% arrange(desc(average_rating)) %>% select(name) %>% slice(1) %>% pull() -> best
+board_games %>% arrange(average_rating) %>% select(name) %>% slice(1) %>% pull() -> worse
+
+top10=board_games %>% arrange(desc(average_rating)) %>% select(name,average_rating) %>% mutate(average_rating=formatC(round(average_rating,3),decimal.mark = ",")) %>% slice(1:10)
+
+colnames(top10)=c("Nome do Jogo", "Nota dos usuários")
+
+bad10=board_games %>% arrange(average_rating) %>% select(name,average_rating) %>% mutate(average_rating=formatC(round(average_rating,3),decimal.mark = ",")) %>% slice(1:10)
+
+colnames(bad10)=c("Nome do Jogo", "Nota dos usuários")
+```
+
+
+De acordo com o banco de dados, o jogo mais bem avaliado é o **`r best`** e jogo pior avaliado é o **`r worse`**.
+
+
+
+#### O top 10 jogos mais bem e mais mal avaliados são: {.tabset}
+##### Jogos mais bem avaliados
+
+```{r top10, echo=FALSE}
+top10 %>% flextable() %>% add_header_lines("Jogos mais bem avaliados") %>% autofit()  %>% theme_booktabs() %>% align(j=1:2,align = "center", part="all") 
+```
+
+##### Jogos mais mal avaliados
+
+```{r bad10, echo=FALSE}
+bad10 %>% flextable()  %>% add_header_lines("Jogos mais mal avaliados") %>% autofit()  %>% theme_booktabs() %>% align(j=1:2,align = "center", part="all")
+```
+
+### Jogos publicados por ano
+
+Abaixo segue a quantidade de jogos publicados por ano, que até 2014 vinha em uma crescente assustadora.
+
+```{r publish, echo=FALSE}
+board_games %>% count(year_published) %>% ggplot(aes(year_published,n))+geom_line(size=1.25)+scale_x_continuous(breaks = seq(1950,2016,8))+expand_limits(x=1950)+labs(x="Anos", y="Quantidade de jogos", title="Quantidade de jogos publicados por ano")+theme_classic()
+```
+
+### Idade mínima recomendada para se jogar
+
+```{r age, echo=FALSE}
+board_games %>% mutate(min_age=fct_lump(factor(min_age),n=11, other_level = "Outras idades"),min_age=fct_rev(fct_relabel(min_age,~str_replace(.x,"^0","Qualquer idade"))))%>% count(min_age) %>%
+  ggplot(aes(min_age,n))+geom_col(fill="blue")+ geom_text(aes(label=n),nudge_y=90)+labs(x="Anos", y="Quantidade de jogos", title="Quantidade de jogos publicados por ano")+theme_classic()+coord_flip()+theme(axis.ticks.x = element_blank(), axis.text.x = element_blank())
+```
+
+### Quantidade de jogadores (Mínimo e Máximo)
+
+A maioria dos jogos cadastrados pela Board Game Geeks precisa de no mínimo 2 jogadores para começar a jogar, enquanto que o máximo é de 4 jogadores.
+  
+#### Número de jogadores: {.tabset}
+##### Número mínimo de jogadores
+```{r min_players, echo=FALSE, fig.show = "hold"}
+
+min_jogar=board_games%>% count(min_players) %>% ggplot(aes(fct_other(factor(min_players),keep=factor(1:6),other_level = "+6"),n))+geom_col(fill="blue")+labs(x="Número mínimo de jogadores", y="Quantidade de jogos", title="Quantidade de jogos por mínimo de jogadores") + scale_y_continuous(breaks=seq(0,7500,600)) +theme_classic()
+min_jogar
+```
+
+##### Número máximo de jogadores
+
+```{r max_players, echo=FALSE, fig.show = "hold"} 
+max_jogar=board_games%>% count(max_players) %>% ggplot(aes(fct_other(factor(max_players),keep=factor(1:15),other_level = "+15"),n))+geom_col(fill="blue")+labs(x="Número máximo de jogadores", y="Quantidade de jogos", title="Quantidade de jogos por máximo de jogadores") + scale_y_continuous(breaks=seq(0,4200,600)) +theme_classic()
+max_jogar
+
+```
+
+
+### Conclusão
+
+Foi algumas análises que achei interessante mostrar por aqui, mas o banco de dados está disponível para explorar por quem quiser ver mais!
+

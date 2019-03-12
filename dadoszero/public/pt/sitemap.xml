@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2019/03/12/tidy-tuesday-board-games-database/</loc>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2019/03/11/hello-world-meu-primeiro-post/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -34,8 +39,18 @@
   
   <url>
     <loc>/tags/ci%C3%AAncia-de-dados/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/tags/ci%C3%AAncia-de-dados/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/tags/ci%C3%AAncia-de-dados/"
+                />
   </url>
   
   <url>
@@ -54,7 +69,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -69,8 +84,24 @@
   </url>
   
   <url>
+    <loc>/tags/fivethirtyeight/</loc>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/tags/fivethirtyeight/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/tags/fivethirtyeight/"
+                />
+  </url>
+  
+  <url>
     <loc>/post/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -85,7 +116,7 @@
   
   <url>
     <loc>/tags/r/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -115,7 +146,7 @@
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -126,6 +157,22 @@
                 rel="alternate"
                 hreflang="pt"
                 href="/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>/tags/tidytuesday/</loc>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/tags/tidytuesday/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/tags/tidytuesday/"
                 />
   </url>
   

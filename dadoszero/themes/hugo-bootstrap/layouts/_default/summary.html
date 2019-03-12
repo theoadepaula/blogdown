@@ -5,8 +5,10 @@
         {{ partial "post-tags" . }}
         {{ partial "post-categories" . }}
     </header>
-    {{ .Summary }}
-    {{ if .Truncated }}
+    {{if .Description }}
+    {{ printf "%s" .Description }}
+    {{ else }}
+    {{ printf "%s" .Summary | markdownify }}
     <p></p>
     <a href="{{ .RelPermalink }}">{{ i18n "readMore" }}</a>
     {{ end }}

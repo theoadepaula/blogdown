@@ -9,9 +9,7 @@ categories: []
 tags: ["R","Ciência de Dados"]
 ---
 
-```r
-Hello World!
-```
+`Hello World!`
 
 <!--more-->
 

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fivethirtyeight on Dados Zero</title>
+    <link>/en/tags/fivethirtyeight/</link>
+    <description>Recent content in Fivethirtyeight on Dados Zero</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>Dados Zero, ©Copyright 2019</copyright>
+    <lastBuildDate>Tue, 12 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/en/tags/fivethirtyeight/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tidy Tuesday - Board Games Database</title>
+      <link>/en/2019/03/12/tidy-tuesday-board-games-database/</link>
+      <pubDate>Tue, 12 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/en/2019/03/12/tidy-tuesday-board-games-database/</guid>
+      <description>Olá! Vamos utilizar o banco de dados fornecido pelo projeto #TidyTuesday para ser utilizado essa semana.O banco de dados vem da Board Game Geeks, tendo um artigo bem interessante publicado na FiveThirtyEight
+Para entender melhor o banco de dados, segue abaixo um dicionário de dados:
+Dicionário de dados
+Variáveis
+Classe
+Descrição
+game_id
+character
+Unique game identifier
+description
+character
+A paragraph of text describing the game
+image
+character</description>
+    </item>
+    
+  </channel>
+</rss>

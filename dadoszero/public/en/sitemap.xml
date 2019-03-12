@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/en/2019/03/12/tidy-tuesday-board-games-database/</loc>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/en/2019/03/11/hello-world-meu-primeiro-post/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -47,6 +52,22 @@
   </url>
   
   <url>
+    <loc>/en/tags/ci%C3%AAncia-de-dados/</loc>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/tags/ci%C3%AAncia-de-dados/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/tags/ci%C3%AAncia-de-dados/"
+                />
+  </url>
+  
+  <url>
     <loc>/en/contact/</loc>
     <xhtml:link
                 rel="alternate"
@@ -62,7 +83,7 @@
   
   <url>
     <loc>/en/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -83,8 +104,24 @@
   </url>
   
   <url>
+    <loc>/en/tags/fivethirtyeight/</loc>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/tags/fivethirtyeight/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/tags/fivethirtyeight/"
+                />
+  </url>
+  
+  <url>
     <loc>/en/post/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -100,7 +137,7 @@
   
   <url>
     <loc>/en/tags/r/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -116,7 +153,7 @@
   
   <url>
     <loc>/en/tags/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -127,6 +164,22 @@
                 rel="alternate"
                 hreflang="en"
                 href="/en/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>/en/tags/tidytuesday/</loc>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/tags/tidytuesday/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/tags/tidytuesday/"
                 />
   </url>
   
