@@ -109,7 +109,10 @@ theme = "hugo-bootstrap"
 
   # Display post summaries instead of content in list templates (default: true)
   # truncate = false
-
+  
+  #Share buttons
+  addThis = "ra-5c890d2ad0c54f86"
+  
   [params.sidebar]
     # Whether to show the recent posts or not (default: true)
     # showRecent = false

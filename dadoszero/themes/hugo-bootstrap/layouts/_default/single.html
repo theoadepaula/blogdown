@@ -8,6 +8,9 @@
     <hr>
 </header>
 <article class="blog-post">
+  
+    {{ partial "addthis" . }}
+
     {{ .Content }}
 
     {{ if .IsTranslated }}
@@ -20,11 +23,11 @@
         {{ end }}
       </ul>
     {{ end }}
-
+    {{ partial "addthis-script" . }}
     {{ partial "related" . }}
 
 </article>
-
+    
 <div class="article-container">
   {{ partial "comments.html" }}
 </div>
