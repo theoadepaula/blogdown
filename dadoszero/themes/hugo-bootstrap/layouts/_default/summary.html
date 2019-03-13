@@ -7,6 +7,8 @@
     </header>
     {{if .Description }}
     {{ printf "%s" .Description }}
+    <p></p>
+    <a href="{{ .RelPermalink }}">{{ i18n "readMore" }}</a>
     {{ else }}
     {{ printf "%s" .Summary | markdownify }}
     <p></p>
