@@ -22,7 +22,7 @@ board_games <- readr::read_csv("https://raw.githubusercontent.com/rfordatascienc
 
 Olá! Vamos utilizar o banco de dados fornecido pelo projeto [#TidyTuesday](https://github.com/rfordatascience/tidytuesday) para ser utilizado essa semana.O banco de dados vem da [Board Game Geeks](https://boardgamegeek.com/), tendo um artigo bem interessante publicado na [FiveThirtyEight](https://fivethirtyeight.com/features/designing-the-best-board-game-on-the-planet/)
 
-Para entender melhor o banco de dados, segue abaixo um dicionário de dados:
+Para entender melhor o banco de dados, segue abaixo um dicionário de dados traduzido do **#TidyTuesday**:
 
 ## Dicionário de dados
 <br>
@@ -54,7 +54,7 @@ dict= tibble::tribble(
         )
 
 dict[,3]=c("Identificador único de jogo", "Texto descritivo do jogo", "URL de Imagem do jogo", "Máximo de jogadores recomendados", "Tempo máximo de jogo recomendado (min)", "Idade mínima recomendada", "Mínimo de Jogadores recomendados", "Tempo mínimo de jogo recomendado (min)", "Nome do jogo", "Tempo médio de jogo",
-"URL da Miniatura do jogo", "Jogo do ano foi publicado", "Artista para a arte do jogo", "Categorias para o jogo (separadas por vírgulas)", "Parte do nome do jogo (Se houver)", "Designer de jogos", "Nome da expansão do jogo (Se houver)", "Família de jogo - Editor", "Mecânica de jogo - como o jogo é jogado, separado por vírgula", "Empresa / pessoa que publicou o jogo, separada por vírgula","Pontuação média no Board Games Geek (1-10)","Número de usuários que avaliaram o jogo")
+"URL da Miniatura do jogo", "Ano que o jogo foi publicado", "Artista da arte do jogo", "Categorias do jogo (separadas por vírgulas)", "Parte do nome do jogo (Se houver)", "Designer de jogos", "Nome da expansão do jogo (Se houver)", "Família de jogo - Editor", "Mecânica de jogo - como o jogo é jogado, separado por vírgula", "Empresa / pessoa que publicou o jogo, separada por vírgula","Pontuação média no Board Games Geek (1-10)","Número de usuários que avaliaram o jogo")
 
 dict %>% flextable() %>% autofit()  %>% theme_booktabs()%>% align(j=3,align = "center", part="all")
 
@@ -105,9 +105,12 @@ board_games %>% count(year_published) %>% ggplot(aes(year_published,n))+geom_lin
 
 ### Idade mínima recomendada para se jogar
 
+Uma criança com 12 anos já consegue jogar quase 85% dos jogos identificados no banco de dados, sendo que uma criança com 10 anos já consegue jogar a maioria dos jogos.
+
 ```{r age, echo=FALSE}
 board_games %>% mutate(min_age=fct_lump(factor(min_age),n=11, other_level = "Outras idades"),min_age=fct_rev(fct_relabel(min_age,~str_replace(.x,"^0","Qualquer idade"))))%>% count(min_age) %>%
   ggplot(aes(min_age,n))+geom_col(fill="blue")+ geom_text(aes(label=n),nudge_y=90)+labs(x="Anos", y="Quantidade de jogos", title="Quantidade de jogos publicados por ano")+theme_classic()+coord_flip()+theme(axis.ticks.x = element_blank(), axis.text.x = element_blank())
+
 ```
 
 ### Quantidade de jogadores (Mínimo e Máximo)
@@ -133,5 +136,5 @@ max_jogar
 
 ### Conclusão
 
-Foi algumas análises que achei interessante mostrar por aqui, mas o banco de dados está disponível para explorar por quem quiser ver mais!
+Foram algumas das análises que achei interessante mostrar por aqui, mas o banco de dados está disponível para explorar para quem quiser ver mais!
 
