@@ -7,24 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>Dados Zero, ©Copyright 2019</copyright>
-    <lastBuildDate>Tue, 12 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/en/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Ciência De Dados</title>
-      <link>/en/tags/ci%C3%AAncia-de-dados/</link>
-      <pubDate>Tue, 12 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/en/tags/ci%C3%AAncia-de-dados/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Data Science</title>
       <link>/en/tags/data-science/</link>
-      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 14 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/en/tags/data-science/</guid>
       <description></description>
@@ -33,7 +24,7 @@
     <item>
       <title>Fivethirtyeight</title>
       <link>/en/tags/fivethirtyeight/</link>
-      <pubDate>Tue, 12 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 14 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/en/tags/fivethirtyeight/</guid>
       <description></description>
@@ -42,7 +33,7 @@
     <item>
       <title>R</title>
       <link>/en/tags/r/</link>
-      <pubDate>Tue, 12 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 14 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/en/tags/r/</guid>
       <description></description>
@@ -51,7 +42,7 @@
     <item>
       <title>Tidytuesday</title>
       <link>/en/tags/tidytuesday/</link>
-      <pubDate>Tue, 12 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 14 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/en/tags/tidytuesday/</guid>
       <description></description>

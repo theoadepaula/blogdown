@@ -1,15 +1,15 @@
 ---
 title: Tidy Tuesday - Board Games Database
 author: Théo Albuquerque de Paula
-date: '2019-03-12'
+date: '2019-03-14'
 slug: tidy-tuesday-board-games-database
 categories: []
 tags:
   - tidytuesday
   - R
   - fivethirtyeight
-  - Ciência de Dados
-description: "Olá! Vamos utilizar o banco de dados ##fornecido## pelo projeto #TidyTuesday para ser utilizado essa semana."
+  - Data science
+description: "Hi! We are going to use a data by project #TidyTuesday this week."
 ---
 
 ```{r packages, echo=FALSE, warning=FALSE, message=FALSE}
@@ -17,7 +17,7 @@ pacman::p_load("tidyverse","flextable")
 ```
 
 
-Olá! Vamos utilizar o banco de dados fornecido pelo projeto [#TidyTuesday](https://github.com/rfordatascience/tidytuesday) para ser utilizado essa semana.O banco de dados vem da [Board Game Geeks](https://boardgamegeek.com/), tendo um artigo bem interessante publicado na [FiveThirtyEight](https://fivethirtyeight.com/features/designing-the-best-board-game-on-the-planet/)
+Hi! We are going to use a data by project [#TidyTuesday](https://github.com/rfordatascience/tidytuesday) this week. O banco de dados vem da [Board Game Geeks](https://boardgamegeek.com/), tendo um artigo bem interessante publicado na [FiveThirtyEight](https://fivethirtyeight.com/features/designing-the-best-board-game-on-the-planet/)
 
 Para entender melhor o banco de dados, segue abaixo um dicionário de dados:
 

@@ -10,16 +10,6 @@
   <url>
     <loc>/2019/03/11/hello-world-meu-primeiro-post/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/2019/03/11/hello-world-meu-primeiro-post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/2019/03/11/hello-world-meu-primeiro-post/"
-                />
   </url>
   
   <url>
@@ -41,16 +31,6 @@
     <loc>/tags/ci%C3%AAncia-de-dados/</loc>
     <lastmod>2019-03-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/tags/ci%C3%AAncia-de-dados/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/tags/ci%C3%AAncia-de-dados/"
-                />
   </url>
   
   <url>

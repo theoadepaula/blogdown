@@ -37,8 +37,6 @@ theme = "hugo-bootstrap"
     name = "Contact"
     weight = 3
     
-  [[languages.en.params]]
-    mainSections = ["post"]
     
 [languages.pt]
   languageName = "Português"
@@ -58,6 +56,8 @@ theme = "hugo-bootstrap"
     url = "/contact/"
     name = "Contato"
     weight = 3
+    
+    
 
 #[languages.es]
 #  languageName = "Español"
@@ -98,7 +98,7 @@ theme = "hugo-bootstrap"
 
 [params]
   # Main sections (currently used for the recent posts in the sidebar)
-  mainSections = ["post"]
+  #mainSections = ["post"]
 
   # Default author
   author = "Théo Albuquerque"
