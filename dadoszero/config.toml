@@ -99,7 +99,7 @@ theme = "hugo-bootstrap"
 [params]
   # Main sections (currently used for the recent posts in the sidebar)
   #mainSections = ["post"]
-
+  
   # Default author
   author = "Théo Albuquerque"
 

@@ -16,12 +16,12 @@
 }
 
 a.symbol {
-    color: #cdd4da;
+    color: #0E6AD1;
     font-size: 2rem;
     text-decoration: none;
     margin-right: 0.3rem;
 }
 
 a.symbol:hover {
-    color: #BCD4DA;
+    color: #5882FA;
 }
