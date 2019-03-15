@@ -7,18 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>Dados Zero, ©Copyright 2019</copyright>
-    <lastBuildDate>Tue, 12 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/en/tags/tidytuesday/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Tidy Tuesday - Board Games Database</title>
-      <link>/en/2019/03/12/tidy-tuesday-board-games-database/</link>
-      <pubDate>Tue, 12 Mar 2019 00:00:00 +0000</pubDate>
+      <link>/en/2019/03/14/tidy-tuesday-board-games-database/</link>
+      <pubDate>Thu, 14 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/en/2019/03/12/tidy-tuesday-board-games-database/</guid>
-      <description>Olá! Vamos utilizar o banco de dados fornecido pelo projeto #TidyTuesday para ser utilizado essa semana.O banco de dados vem da Board Game Geeks, tendo um artigo bem interessante publicado na FiveThirtyEight
+      <guid>/en/2019/03/14/tidy-tuesday-board-games-database/</guid>
+      <description>Hi! We are going to use a data by project #TidyTuesday this week. O banco de dados vem da Board Game Geeks, tendo um artigo bem interessante publicado na FiveThirtyEight
 Para entender melhor o banco de dados, segue abaixo um dicionário de dados:
 Dicionário de dados
 Variáveis
@@ -31,7 +31,8 @@ description
 character
 A paragraph of text describing the game
 image
-character</description>
+character
+URL image of the game</description>
     </item>
     
   </channel>
