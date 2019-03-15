@@ -5,4 +5,7 @@
     {{ if default true .Site.Params.sidebar.showTaxonomy }}
         {{ partial "taxonomies" . }}
     {{ end }}
+    {{ if .Site.Social }}
+        {{ partial "social.html" . }}
+    {{ end }}
 </aside>

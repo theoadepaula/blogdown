@@ -1,6 +1,12 @@
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{{ if eq .Site.Params.iconFont "font-awesome" }}
+<link rel="stylesheet" href="{{ .Site.BaseURL }}fontawesome/css/font-awesome.min.css">
+{{ else }}
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/monosocialiconsfont.css">
+{{ end }}
+
 
 {{ template "_internal/opengraph.html" . }}
 {{ template "_internal/twitter_cards.html" . }}

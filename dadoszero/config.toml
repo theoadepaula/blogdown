@@ -113,6 +113,16 @@ theme = "hugo-bootstrap"
   #Share buttons
   addThis = "ra-5c890d2ad0c54f86"
   
+    # Choose a font for the social icons in the footer. Either "mono-social" or "font-awesome"
+	  iconFont = "mono-social"
+    # The social icons can be styled differently if you use mono as font - circle, rounded, or empty
+    socialIconStyle = "circle"
+    
+    [social]
+    twitter = "http://www.twitter.com/DadosZero"
+    github = "http://www.github.com/theoadepaula/"
+    linkedin = "https://www.linkedin.com/in/théo-albuquerque-de-paula-23735a156/"
+  
   [params.sidebar]
     # Whether to show the recent posts or not (default: true)
     # showRecent = false
@@ -123,7 +133,8 @@ theme = "hugo-bootstrap"
     # How many posts to show on the sidebar (Default: 5)
     # num_recent_posts = 5
     
-    twitter="https://twitter.com/dadoszero"
+
+
 
   [params.header]
     # Color scheme for the header (default: "light")

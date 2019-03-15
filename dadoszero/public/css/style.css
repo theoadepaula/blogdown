@@ -6,3 +6,22 @@
 .blog-post img {
   max-width: 100%;
 }
+
+/* CUSTOM ADDITIONS */
+
+#social {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+a.symbol {
+    color: #cdd4da;
+    font-size: 2rem;
+    text-decoration: none;
+    margin-right: 0.3rem;
+}
+
+a.symbol:hover {
+    color: #BCD4DA;
+}
