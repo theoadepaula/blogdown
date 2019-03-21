@@ -162,11 +162,13 @@ dt_final %>% mutate(ano=year(data_cadastro)) %>% ggplot(aes(ano))+geom_histogram
   Há 189 domínios que foram lançados, mas depois não foram mais atualizados. O domínio que foi lançado e não foi mais atualizado é o <http://xn--previdnciasocial-xqb.gov.br> e o mais novo é o <http://centelha.gov.br>. Você ver os demais na tabela abaixo:
 
 ```{r update,echo=FALSE}
-dt_final%>% filter(dt$ultima_atualizacao==dt$data_cadastro) %>% 
+d_1=dt_final%>% filter(dt$ultima_atualizacao==dt$data_cadastro) %>% 
   select(dominio,cidade,uf,data_cadastro,ultima_atualizacao) %>%
   arrange(data_cadastro) %>% mutate(data_cadastro=format(data_cadastro,"%d/%m/%Y"),
                                           ultima_atualizacao=format(ultima_atualizacao,"%d/%m/%Y")) %>% datatable(colnames = c(" Domínio","UF","Data de Cadastro", "Última Atualização"))
+htmlwidgets::saveWidget(d_1, file = "d1_dominio.html", selfcontained = TRUE)
 ```
+<iframe seamless src="/d1_dominio.html" width="100%" height="500"></iframe>
 
 ### Órgãos
 
@@ -174,9 +176,10 @@ dt_final%>% filter(dt$ultima_atualizacao==dt$data_cadastro) %>%
   
 
 ```{r orgaos,echo=FALSE, message=FALSE,warning=FALSE}
-dt_final%>% count(nome, sort = T) %>% datatable(colnames = c(" Órgão","Quantidade"))
+d_2=dt_final%>% count(nome, sort = T) %>% datatable(colnames = c(" Órgão","Quantidade"))
+htmlwidgets::saveWidget(d_2, file = "d2_dominio.html", selfcontained = TRUE)
 ```  
-  
+<iframe seamless src="/d2_dominio.html" width="100%" height="500"></iframe>  
   
 ### Localização
   
@@ -191,10 +194,10 @@ dt_final%>% count(nome, sort = T) %>% datatable(colnames = c(" Órgão","Quantid
   theme_minimal()+theme(axis.text.x = element_blank(), panel.grid = element_blank())
 
 
-  dt_final %>% count(cidade,uf, sort=T) %>% datatable(colnames = c(" Cidade","UF","Quantidade"))
-
+  d_3=dt_final %>% count(cidade,uf, sort=T) %>% datatable(colnames = c(" Cidade","UF","Quantidade"))
+  htmlwidgets::saveWidget(d_3, file = "d3_dominio.html", selfcontained = TRUE)
 ```
-  
+  <iframe seamless src="//d3_dominio.html" width="100%" height="500"></iframe>  
 
   No mapa abaixo podemos ver quais cidades utilizam os domínios Gov.br:
 
@@ -203,9 +206,10 @@ dt_final%>% count(nome, sort = T) %>% datatable(colnames = c(" Órgão","Quantid
 cidades_mapa=leaflet(dt_final) %>% 
   addProviderTiles("Esri") %>%
   addCircleMarkers(clusterOptions = markerClusterOptions())
+
 saveWidget(cidades_mapa,"cidade_dominio.html")
 ```
-  <iframe src='cidade_dominio.html'></iframe>
+  <iframe seamless src='/cidade_dominio.html'  width="100%" height="500"></iframe>
   
 
 ## Conclusão

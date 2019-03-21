@@ -19,7 +19,15 @@
       <guid>/2019/03/19/dom%C3%ADnios-gov-br/</guid>
       <description>Hoje, nós iremos analisar o banco de dados relacionados aos domínios que terminam em Gov.br, que pode ser encontrado nesse link. A iniciativa de disponibilizar dados públicos e abertos pode ser encontrado no site dos Dados Abertos.
 Para entender melhor o banco de dados a ser analisado, abaixo segue o dicionário das variáveis.
-Dicionário de DadosCampo</description>
+Dicionário de DadosCampo
+Tipo
+Descrição
+dominio
+Texto
+URL cadastrada no Registro.br
+documento
+Texto
+Número do documento informado ao Registro.</description>
     </item>
     
     <item>
@@ -50,6 +58,42 @@ image</description>
       
       <guid>/2019/03/11/hello-world-meu-primeiro-post/</guid>
       <description>&lt;p&gt;&lt;code&gt;Hello World!&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/1/01/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/01/</guid>
+      <description>leaflet(function() {// If window.HTMLWidgets is already defined, then use it; otherwise create a// new object. This allows preceding code to set options that affect the// initialization process (though none currently exist).window.HTMLWidgets = window.HTMLWidgets || {};// See if we&#39;re running in a viewer pane. If not, we&#39;re in a web browser.var viewerMode = window.HTMLWidgets.viewerMode =/\bviewer_pane=1\b/.test(window.location);// See if we&#39;re running in Shiny mode.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/1/01/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/01/</guid>
+      <description>datatables(function() {// If window.HTMLWidgets is already defined, then use it; otherwise create a// new object. This allows preceding code to set options that affect the// initialization process (though none currently exist).window.HTMLWidgets = window.HTMLWidgets || {};// See if we&#39;re running in a viewer pane. If not, we&#39;re in a web browser.var viewerMode = window.HTMLWidgets.viewerMode =/\bviewer_pane=1\b/.test(window.location);// See if we&#39;re running in Shiny mode.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/1/01/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/01/</guid>
+      <description>datatables(function() {// If window.HTMLWidgets is already defined, then use it; otherwise create a// new object. This allows preceding code to set options that affect the// initialization process (though none currently exist).window.HTMLWidgets = window.HTMLWidgets || {};// See if we&#39;re running in a viewer pane. If not, we&#39;re in a web browser.var viewerMode = window.HTMLWidgets.viewerMode =/\bviewer_pane=1\b/.test(window.location);// See if we&#39;re running in Shiny mode.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/1/01/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/01/</guid>
+      <description>datatables(function() {// If window.HTMLWidgets is already defined, then use it; otherwise create a// new object. This allows preceding code to set options that affect the// initialization process (though none currently exist).window.HTMLWidgets = window.HTMLWidgets || {};// See if we&#39;re running in a viewer pane. If not, we&#39;re in a web browser.var viewerMode = window.HTMLWidgets.viewerMode =/\bviewer_pane=1\b/.test(window.location);// See if we&#39;re running in Shiny mode.</description>
     </item>
     
   </channel>

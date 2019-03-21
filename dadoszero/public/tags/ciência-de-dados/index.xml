@@ -19,7 +19,15 @@
       <guid>/2019/03/19/dom%C3%ADnios-gov-br/</guid>
       <description>Hoje, nós iremos analisar o banco de dados relacionados aos domínios que terminam em Gov.br, que pode ser encontrado nesse link. A iniciativa de disponibilizar dados públicos e abertos pode ser encontrado no site dos Dados Abertos.
 Para entender melhor o banco de dados a ser analisado, abaixo segue o dicionário das variáveis.
-Dicionário de DadosCampo</description>
+Dicionário de DadosCampo
+Tipo
+Descrição
+dominio
+Texto
+URL cadastrada no Registro.br
+documento
+Texto
+Número do documento informado ao Registro.</description>
     </item>
     
     <item>
