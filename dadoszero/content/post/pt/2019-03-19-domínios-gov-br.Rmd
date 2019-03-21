@@ -197,7 +197,7 @@ htmlwidgets::saveWidget(d_2, file = "d2_dominio.html", selfcontained = TRUE)
   d_3=dt_final %>% count(cidade,uf, sort=T) %>% datatable(colnames = c(" Cidade","UF","Quantidade"))
   htmlwidgets::saveWidget(d_3, file = "d3_dominio.html", selfcontained = TRUE)
 ```
-  <iframe seamless src="//d3_dominio.html" width="100%" height="500"></iframe>  
+  <iframe seamless src="/d3_dominio.html" width="100%" height="500"></iframe>  
 
   No mapa abaixo podemos ver quais cidades utilizam os domínios Gov.br:
 
