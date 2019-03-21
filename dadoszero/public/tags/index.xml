@@ -6,17 +6,35 @@
     <description>Recent content in Tags on Dados Zero</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Tue, 12 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Brasil</title>
+      <link>/tags/brasil/</link>
+      <pubDate>Tue, 19 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/brasil/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Ciência De Dados</title>
       <link>/tags/ci%C3%AAncia-de-dados/</link>
-      <pubDate>Tue, 12 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 19 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/ci%C3%AAncia-de-dados/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dados Abertos</title>
+      <link>/tags/dados-abertos/</link>
+      <pubDate>Tue, 19 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/dados-abertos/</guid>
       <description></description>
     </item>
     
@@ -32,7 +50,7 @@
     <item>
       <title>R</title>
       <link>/tags/r/</link>
-      <pubDate>Tue, 12 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 19 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/r/</guid>
       <description></description>
