@@ -200,12 +200,13 @@ dt_final%>% count(nome, sort = T) %>% datatable(colnames = c(" Órgão","Quantid
 
 
 ```{r map, echo=FALSE, message=FALSE,warning=FALSE}
-leaflet(dt_final) %>% 
+cidades_mapa=leaflet(dt_final) %>% 
   addProviderTiles("Esri") %>%
   addCircleMarkers(clusterOptions = markerClusterOptions())
-
+saveWidget(cidades_mapa,"cidade_dominio.html")
 ```
-
+  <iframe src='cidade_dominio.html'></iframe>
+  
 
 ## Conclusão
 
