@@ -165,7 +165,7 @@ dt_final %>% mutate(ano=year(data_cadastro)) %>% ggplot(aes(ano))+geom_histogram
 d_1=dt_final%>% filter(dt$ultima_atualizacao==dt$data_cadastro) %>% 
   select(dominio,cidade,uf,data_cadastro,ultima_atualizacao) %>%
   arrange(data_cadastro) %>% mutate(data_cadastro=format(data_cadastro,"%d/%m/%Y"),
-                                          ultima_atualizacao=format(ultima_atualizacao,"%d/%m/%Y")) %>% datatable(colnames = c(" Domínio","UF","Data de Cadastro", "Última Atualização"),                                         options = list(
+                                          ultima_atualizacao=format(ultima_atualizacao,"%d/%m/%Y")) %>% datatable(colnames = c(" Domínio","UF","Data de Cadastro", "Última Atualização"), rownames=FALSE,                                         options = list(
            language = list(url = '//cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json'),
             pageLength = 5)
          )
@@ -181,7 +181,7 @@ frameWidget(d_1)
   
 
 ```{r orgaos,echo=FALSE, message=FALSE,warning=FALSE,out.width = "100%"}
-d_2=dt_final%>% count(nome, sort = T) %>% datatable(colnames = c(" Órgão","Quantidade"),options = list(
+d_2=dt_final%>% mutate(nome=toupper(rm_accent(nome))) %>% count(nome, sort = T) %>% datatable(colnames = c(" Órgão","Quantidade"),rownames=FALSE,options = list(
   language = list(url = '//cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json'),
   pageLength = 5
 ))
