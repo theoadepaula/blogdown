@@ -203,7 +203,7 @@ frameWidget(d_2)
   theme_minimal()+theme(axis.text.x = element_blank(), panel.grid = element_blank())
 
 
-  d_3=dt_final %>% count(cidade,uf, sort=T) %>% datatable(colnames = c(" Cidade","UF","Quantidade"),options = list(
+  d_3=dt_final %>% count(cidade,uf, sort=T) %>% datatable(colnames = c(" Cidade","UF","Quantidade"),rownames=FALSE,options = list(
   language = list(url = '//cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json'),
   pageLength = 5))
  # htmlwidgets::saveWidget(d_3, file = "d3_dominio.html", selfcontained = TRUE)
