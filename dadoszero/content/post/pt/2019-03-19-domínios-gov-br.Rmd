@@ -165,7 +165,10 @@ dt_final %>% mutate(ano=year(data_cadastro)) %>% ggplot(aes(ano))+geom_histogram
 d_1=dt_final%>% filter(dt$ultima_atualizacao==dt$data_cadastro) %>% 
   select(dominio,cidade,uf,data_cadastro,ultima_atualizacao) %>%
   arrange(data_cadastro) %>% mutate(data_cadastro=format(data_cadastro,"%d/%m/%Y"),
-                                          ultima_atualizacao=format(ultima_atualizacao,"%d/%m/%Y")) %>% datatable(colnames = c(" Domínio","UF","Data de Cadastro", "Última Atualização"))
+                                          ultima_atualizacao=format(ultima_atualizacao,"%d/%m/%Y")) %>% datatable(colnames = c(" Domínio","UF","Data de Cadastro", "Última Atualização"),                                         options = list(
+           language = list(url = '//cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json'),
+            pageLength = 5)
+         )
 #htmlwidgets::saveWidget(d_1, file = "d1_dominio.html", selfcontained = TRUE)
 frameWidget(d_1)
 
@@ -177,8 +180,11 @@ frameWidget(d_1)
   Os domínios registrados pertencem a `r n_distinct(dt_final$nome)` órgãos. Alguns órgãos registraram mais de um domínio Gov.br por causa dos serviços que prestam, como a Caixa Econômica Federal que presta os serviços de loteria, de empréstimos pessoais/corporativos e de financiamentos culturais. Às vezes um domínio Gov.br é registrado por causa da proximidade dos nomes dos órgãos e redireciona para o site principal.
   
 
-```{r orgaos,echo=FALSE, message=FALSE,warning=FALSE}
-d_2=dt_final%>% count(nome, sort = T) %>% datatable(colnames = c(" Órgão","Quantidade"))
+```{r orgaos,echo=FALSE, message=FALSE,warning=FALSE,out.width = "100%"}
+d_2=dt_final%>% count(nome, sort = T) %>% datatable(colnames = c(" Órgão","Quantidade"),options = list(
+  language = list(url = '//cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json'),
+  pageLength = 5
+))
 #htmlwidgets::saveWidget(d_2, file = "d2_dominio.html", selfcontained = TRUE)
 frameWidget(d_2)
 ```  
@@ -189,7 +195,7 @@ frameWidget(d_2)
   A cidade que mais possui domínios Gov.br é Brasília, pelo fato de ser a capital do Brasil. O Rio de Janeiro ainda possui muitos órgãos federais, o que justifica a segunda posição.
   
   
-```{r top10,echo=FALSE, message=FALSE,warning=FALSE}
+```{r top10,echo=FALSE, message=FALSE,warning=FALSE,out.width = "100%"}
 
   dt_final%>% count(cidade, sort = T) %>% slice(1:15) %>% ggplot(aes(fct_reorder(cidade,n),n))+
   geom_col(fill="blue")+ geom_text(aes(label=n), nudge_y = 25) +coord_flip()+
@@ -197,7 +203,9 @@ frameWidget(d_2)
   theme_minimal()+theme(axis.text.x = element_blank(), panel.grid = element_blank())
 
 
-  d_3=dt_final %>% count(cidade,uf, sort=T) %>% datatable(colnames = c(" Cidade","UF","Quantidade"))
+  d_3=dt_final %>% count(cidade,uf, sort=T) %>% datatable(colnames = c(" Cidade","UF","Quantidade"),options = list(
+  language = list(url = '//cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json'),
+  pageLength = 5))
  # htmlwidgets::saveWidget(d_3, file = "d3_dominio.html", selfcontained = TRUE)
   frameWidget(d_3)
 
@@ -207,7 +215,7 @@ frameWidget(d_2)
   No mapa abaixo podemos ver quais cidades utilizam os domínios Gov.br:
 
 
-```{r map, echo=FALSE, message=FALSE,warning=FALSE}
+```{r map, echo=FALSE, message=FALSE,warning=FALSE,out.width = "100%"}
 cidades_mapa=leaflet(dt_final) %>% 
   addProviderTiles("Esri") %>%
   addCircleMarkers(clusterOptions = markerClusterOptions())
