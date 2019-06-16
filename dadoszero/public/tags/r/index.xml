@@ -6,10 +6,26 @@
     <description>Recent content in R on Dados Zero</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Tue, 12 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Domínios Gov.br</title>
+      <link>/2019/03/19/dom%C3%ADnios-gov-br/</link>
+      <pubDate>Tue, 19 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/03/19/dom%C3%ADnios-gov-br/</guid>
+      <description>Hoje, nós iremos analisar o banco de dados relacionados aos domínios que terminam em Gov.br, que pode ser encontrado nesse link. A iniciativa de disponibilizar dados públicos e abertos pode ser encontrado no site dos Dados Abertos.
+Para entender melhor o banco de dados a ser analisado, abaixo segue o dicionário das variáveis.
+Dicionário de DadosCampo
+Tipo
+Descrição
+dominio
+Texto
+URL cadastrada no Registro.br</description>
+    </item>
     
     <item>
       <title>Tidy Tuesday - Board Games Database</title>

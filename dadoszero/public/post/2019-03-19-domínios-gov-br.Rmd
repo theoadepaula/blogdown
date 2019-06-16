@@ -1,0 +1,218 @@
+---
+title: Domínios Gov.br
+author: Théo Albuquerque de Paula
+date: '2019-03-19'
+slug: domínios-gov-br
+categories: []
+tags:
+  - Ciência de Dados
+  - R
+  - Brasil
+  - Dados Abertos
+description: "Hoje iremos analisar o banco de dados relacionados aos domínios que terminam em Gov.br"
+---
+```{r packages, echo=FALSE,message=FALSE,warning=FALSE}
+pacman::p_load("tidyverse","flextable","lubridate","leaflet","DT")
+
+```
+
+```{r data, echo=FALSE, message=FALSE}
+dt = read_csv2("http://dominios.governoeletronico.gov.br/dados-abertos/Dominios_GovBR_basico.csv", locale = locale(encoding = 'ISO-8859-1'))
+
+dt_dicio= tibble::tribble(
+                ~Campo,       ~Tipo,                                                                              ~Descrição,
+             "dominio",     "Texto",                                                         "URL cadastrada no Registro.br",
+           "documento",     "Texto",                       "Número do documento informado ao Registro.br no cadastro da URL",
+                "nome",     "Texto",                             "Nome do Órgão ou Entidade responsável pela URL cadastrada",
+                  "uf",     "Texto", "Unidade da federação que Órgão ou Entidade informou ao cadastrar a URL no Registro.br",
+              "cidade",     "Texto",               "Cidade que Órgão ou Entidade informou ao cadastrar a URL no Registro.br",
+                 "cep",     "Texto",                  "CEP que Órgão ou Entidade informou ao cadastrar a URL no Registro.br",
+       "data_cadastro", "Data/Hora",                                                  "Data em que o domínio foi registrado",
+  "ultima_atualizacao", "Data/Hora",                                     "Data em que o domínio sofreu a última atualização",
+              "ticket",   "Inteiro",              "Número do ticket vinculado ao registro da URL no cadastro do Registro.br"
+  )
+
+estados=c("11-Rondônia/RO",
+  "12-Acre/AC",
+  "13-Amazonas/AM",
+  "14-Roraima/RR",
+  "15-Pará/PA",
+  "16-Amapá/AP",
+  "17-Tocantins/TO",
+  "21-Maranhão/MA",
+  "22-Piauí/PI",
+  "23-Ceará/CE",
+  "24-Rio Grande do Norte/RN",
+  "25-Paraíba/PB",
+  "26-Pernambuco/PE",
+  "27-Alagoas/AL",
+  "28-Sergipe/SE",
+  "29-Bahia/BA",
+  "31-Minas Gerais/MG",
+  "32-Espírito Santo/ES",
+  "33-Rio de Janeiro/RJ",
+  "35-São Paulo/SP",
+  "41-Paraná/PR",
+  "42-Santa Catarina/SC",
+  "43-Rio Grande do Sul/RS",
+  "50-Mato Grosso do Sul/MS",
+  "51-Mato Grosso/MT",
+  "52-Goiás/GO",
+  "53-Distrito Federal/DF")
+
+estados= data.frame(estados)
+estados = estados %>% separate(estados,c("codigo","estado"), sep="-") %>% 
+  separate(estado,c("estado","UF"),sep = "/")
+
+rm_accent <- function(str,pattern="all") {
+  # Rotinas e funções úteis V 1.0
+  # rm.accent - REMOVE ACENTOS DE PALAVRAS
+  # Função que tira todos os acentos e pontuações de um vetor de strings.
+  # Parâmetros:
+  # str - vetor de strings que terão seus acentos retirados.
+  # patterns - vetor de strings com um ou mais elementos indicando quais acentos deverão ser retirados.
+  #            Para indicar quais acentos deverão ser retirados, um vetor com os símbolos deverão ser passados.
+  #            Exemplo: pattern = c("´", "^") retirará os acentos agudos e circunflexos apenas.
+  #            Outras palavras aceitas: "all" (retira todos os acentos, que são "´", "`", "^", "~", "¨", "ç")
+  if(!is.character(str))
+    str <- as.character(str)
+  
+  pattern <- unique(pattern)
+  
+  if(any(pattern=="Ç"))
+    pattern[pattern=="Ç"] <- "ç"
+  
+  symbols <- c(
+    acute = "áéíóúÁÉÍÓÚýÝ",
+    grave = "àèìòùÀÈÌÒÙ",
+    circunflex = "âêîôûÂÊÎÔÛ",
+    tilde = "ãõÃÕñÑ",
+    umlaut = "äëïöüÄËÏÖÜÿ",
+    cedil = "çÇ"
+  )
+  
+  nudeSymbols <- c(
+    acute = "aeiouAEIOUyY",
+    grave = "aeiouAEIOU",
+    circunflex = "aeiouAEIOU",
+    tilde = "aoAOnN",
+    umlaut = "aeiouAEIOUy",
+    cedil = "cC"
+  )
+  
+  accentTypes <- c("´","`","^","~","¨","ç")
+  
+  if(any(c("all","al","a","todos","t","to","tod","todo")%in%pattern)) # opcao retirar todos
+    return(chartr(paste(symbols, collapse=""), paste(nudeSymbols, collapse=""), str))
+  
+  for(i in which(accentTypes%in%pattern))
+    str <- chartr(symbols[i],nudeSymbols[i], str)
+  
+  return(str)
+}
+
+dt$cidade=rm_accent(dt$cidade)
+dt$cidade=toupper(dt$cidade)
+dt$cidade=str_replace_all(dt$cidade,c("VITORIAE"="VITORIA",
+                                      "BRASILI$"="BRASILIA"))
+
+coord=readxl:: read_xls("anexo_16261_Coordenadas_Sedes_5565_Municípios_2010.xls")
+
+coord$NOME_MUNICIPIO = rm_accent(coord$NOME_MUNICIPIO)
+coord$NOME_MUNICIPIO =toupper(coord$NOME_MUNICIPIO)
+coord=coord %>% mutate(codigo=str_extract(GEOCODIGO_MUNICIPIO,".{2}"))
+coord_comp= coord %>% left_join(estados, by=c("codigo"="codigo"))
+
+dt_final = dt %>% left_join(coord_comp, by=c("cidade"="NOME_MUNICIPIO","uf"="UF")) %>%
+            select(1,2,3,4,LONGITUDE,LATITUDE,everything(),-c(GEOCODIGO_MUNICIPIO,ticket,codigo,estado))
+
+site_antigo=dt %>% arrange(data_cadastro) %>% slice(1) %>% select(dominio) %>% pull()
+site_antigo_data= dt %>% arrange(data_cadastro) %>% slice(1) %>% select(data_cadastro)%>% pull()
+site_novo= dt %>% arrange(desc(data_cadastro)) %>% slice(1) %>% select(dominio) %>% pull()
+site_novo_data= dt %>% arrange(desc(data_cadastro)) %>% slice(1) %>% select(data_cadastro)%>% pull()
+
+```
+
+Hoje, nós iremos analisar o banco de dados relacionados aos domínios que terminam em Gov.br, que pode ser encontrado nesse [link](http://dados.gov.br/dataset/dominios-gov-br). A iniciativa de disponibilizar dados públicos e abertos pode ser encontrado no site dos [Dados Abertos](http://dados.gov.br/).
+
+Para entender melhor o banco de dados a ser analisado, abaixo segue o dicionário das variáveis.
+
+## Dicionário de Dados
+
+```{r dict, echo=FALSE}
+dt_dicio %>% flextable() %>% autofit() %>% align(align = "center",part="all")
+```
+
+## Análise de Dados
+
+### Registros por ano
+
+  Existem `r nrow(dt)` sites com domínios Gov.br. Sendo o site mais antigo a ser registrado é o `r site_antigo[1]`, na data  `r format(site_antigo_data,"%d de %B de %Y")`, e o mais novo é o `r site_novo[1]`, na data `r format(site_novo_data,"%d de %B de %Y")`.
+  
+  Abaixo segue o histograma de registros de domínio por ano:
+  
+```{r hist,echo=FALSE}
+dt_final %>% mutate(ano=year(data_cadastro)) %>% ggplot(aes(ano))+geom_histogram(bins = 24,fill="blue",col="black")+
+ scale_y_continuous(breaks=seq(0,200,25))+ scale_x_continuous(breaks = seq(1995,2019,1))+
+ labs(title="Histograma de Domínios registrado por ano",x="Ano",y="Frequência")+theme_minimal()+  theme(axis.text.x = element_text(angle = 45),panel.grid.minor = element_blank())
+```
+
+### Última atualização do site
+
+  Há 189 domínios que foram lançados, mas depois não foram mais atualizados. O domínio que foi lançado e não foi mais atualizado é o <http://xn--previdnciasocial-xqb.gov.br> e o mais novo é o <http://centelha.gov.br>. Você ver os demais na tabela abaixo:
+
+```{r update,echo=FALSE}
+d_1=dt_final%>% filter(dt$ultima_atualizacao==dt$data_cadastro) %>% 
+  select(dominio,cidade,uf,data_cadastro,ultima_atualizacao) %>%
+  arrange(data_cadastro) %>% mutate(data_cadastro=format(data_cadastro,"%d/%m/%Y"),
+                                          ultima_atualizacao=format(ultima_atualizacao,"%d/%m/%Y")) %>% datatable(colnames = c(" Domínio","UF","Data de Cadastro", "Última Atualização"))
+htmlwidgets::saveWidget(d_1, file = "d1_dominio.html", selfcontained = TRUE)
+```
+<iframe seamless src="/d1_dominio.html" width="100%" height="500"></iframe>
+
+### Órgãos
+
+  Os domínios registrados pertencem a `r n_distinct(dt_final$nome)` órgãos. Alguns órgãos registraram mais de um domínio Gov.br por causa dos serviços que prestam, como a Caixa Econômica Federal que presta os serviços de loteria, de empréstimos pessoais/corporativos e de financiamentos culturais. Às vezes um domínio Gov.br é registrado por causa da proximidade dos nomes dos órgãos e redireciona para o site principal.
+  
+
+```{r orgaos,echo=FALSE, message=FALSE,warning=FALSE}
+d_2=dt_final%>% count(nome, sort = T) %>% datatable(colnames = c(" Órgão","Quantidade"))
+htmlwidgets::saveWidget(d_2, file = "d2_dominio.html", selfcontained = TRUE)
+```  
+<iframe seamless src="/d2_dominio.html" width="100%" height="500"></iframe>  
+  
+### Localização
+  
+  A cidade que mais possui domínios Gov.br é Brasília, pelo fato de ser a capital do Brasil. O Rio de Janeiro ainda possui muitos órgãos federais, o que justifica a segunda posição.
+  
+  
+```{r top10,echo=FALSE, message=FALSE,warning=FALSE}
+
+  dt_final%>% count(cidade, sort = T) %>% slice(1:15) %>% ggplot(aes(fct_reorder(cidade,n),n))+
+  geom_col(fill="blue")+ geom_text(aes(label=n), nudge_y = 25) +coord_flip()+
+  labs(title="Quantidade de Domínios registrados por cidade",x="Cidade",y="Quantidade")+
+  theme_minimal()+theme(axis.text.x = element_blank(), panel.grid = element_blank())
+
+
+  d_3=dt_final %>% count(cidade,uf, sort=T) %>% datatable(colnames = c(" Cidade","UF","Quantidade"))
+  htmlwidgets::saveWidget(d_3, file = "d3_dominio.html", selfcontained = TRUE)
+```
+  <iframe seamless src="//d3_dominio.html" width="100%" height="500"></iframe>  
+
+  No mapa abaixo podemos ver quais cidades utilizam os domínios Gov.br:
+
+
+```{r map, echo=FALSE, message=FALSE,warning=FALSE}
+cidades_mapa=leaflet(dt_final) %>% 
+  addProviderTiles("Esri") %>%
+  addCircleMarkers(clusterOptions = markerClusterOptions())
+
+saveWidget(cidades_mapa,"cidade_dominio.html")
+```
+  <iframe seamless src='/cidade_dominio.html'  width="100%" height="500"></iframe>
+  
+
+## Conclusão
+
+  É interessante perceber que a maioria dos domínios Gov.br foram registrados nas capitais, mas não exclusivas a essas cidades. É louvável que haja muitos domínios registrados por órgãos federais, o que ajuda na transparência e divulgação de notícias, mas ainda é tímida a utilização dos domínios Gov.br pelos governos estaduais e municipais.
+
